@@ -8,6 +8,7 @@ urlpatterns = [
     path('interpolation', include('interpolation.urls')),
     path('proportion', include('proportion.urls')),
     path('dbn', include('dbn.urls')),
+    path('main_page', include('main_page.urls'))
 ]
 
 if settings.DEBUG:

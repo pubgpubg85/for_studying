@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'interpolation',
     'proportion',
     'dbn',
+    'auth',
+    'main_page',
 ]
 
 MIDDLEWARE = [
