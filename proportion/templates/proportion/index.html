@@ -1,0 +1,26 @@
+{% extends 'interpolation/nav.html' %}
+{% block title %}
+    {{title}}
+{% endblock %}
+{% block content %}
+<h1>Proportion</h1>
+<form action="{% url 'proportion:proportion' %}" method="get">
+    {% csrf_token %}
+    <input type="submit" value="calculate">
+    <table>
+        <tbody>
+        <tr>
+            <td><input name="l1" placeholder='left'></td>
+            <td><input name="r1" placeholder='right'></td>
+        </tr>
+        <tr>
+            <td><input name="l2" placeholder='left'></td>
+            <td><input name="r2" placeholder='right'></td>
+        </tr>
+        <tr>
+            <th>{{ result }}</th>
+        </tr>
+        </tbody>
+    </table>
+</form>
+{% endblock %}

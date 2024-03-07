@@ -1,0 +1,45 @@
+{% extends 'interpolation/nav.html' %}
+{% block title %}
+    {{title}}
+{% endblock %}
+{% block content %}
+<h1>Interpolation</h1>
+<form action="{% url 'interpolation:interpolation' %}" method="get">
+    {% csrf_token %}
+    <input type="submit" value="calculate">
+    <table>
+        <thead>
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">x</th>
+            <th scope="col">f(x)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="col">x1</th>
+            <td><input name="x1" placeholder={{x1}}></td>
+            <td><input name="fx1" placeholder={{fx1}}></td>
+        </tr>
+        <tr>
+            <th scope="col">x2</th>
+            <td><input name="x2" placeholder={{x2}}></td>
+            <td><input name="fx2" placeholder={{fx2}}></td>
+        </tr>
+        <tr>
+            <th scope="col">x</th>
+            <td><input name="x" placeholder="{{x}}"></td>
+            <td>{{ result }}</td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+<h4>Detailed calculation</h4>
+{% if result|default:""|floatformat:"2" != "" %}
+    <label>
+        f({{ x }}) = {{fx1}} + ({{x}} - {{x1}})<span class="abow" style="text-decoration: underline">{{fx2}} - {{fx1}}</span> <span class="main">-----------</span> <span class="under">{{x2}} - {{x1}}</span> <span> = {{result}}</span>
+    </label>
+{% else %}
+    <h5>{{ result }}</h5>
+{% endif %}
+{% endblock %}

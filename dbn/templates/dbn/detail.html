@@ -1,0 +1,10 @@
+{% extends 'interpolation/nav.html' %}
+{% block title %}
+    "DBN"
+{% endblock %}
+{% block content %}
+    <h1>{{ pdf_file.document_name }}</h1>
+    <div id="pdf-container">
+        <embed src="{{ pdf_file.document_file.url }}" type="application/pdf" width="100%" height="975px">
+    </div>
+{% endblock %}
