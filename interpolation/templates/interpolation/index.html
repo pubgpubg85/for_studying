@@ -1,4 +1,8 @@
-{% extends 'interpolation/nav.html' %}
+{% extends 'main_page/nav.html' %}
+{% block link %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'interpolation/css/style.css' %}"/>
+{% endblock %}
 {% block title %}
     {{title}}
 {% endblock %}

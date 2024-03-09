@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 import os
 from pathlib import Path
 
+from django.urls import reverse_lazy
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -38,8 +40,8 @@ INSTALLED_APPS = [
     'interpolation',
     'proportion',
     'dbn',
-    'auth',
     'main_page',
+    'reg_sing',
 ]
 
 MIDDLEWARE = [
@@ -125,3 +127,5 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+LOGIN_REDIRECT_URL = reverse_lazy('main_page:main_page')

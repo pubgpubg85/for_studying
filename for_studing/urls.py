@@ -5,10 +5,11 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('interpolation', include('interpolation.urls')),
-    path('proportion', include('proportion.urls')),
-    path('dbn', include('dbn.urls')),
-    path('main_page', include('main_page.urls'))
+    path('interpolation/', include('interpolation.urls')),
+    path('proportion/', include('proportion.urls')),
+    path('dbn/', include('dbn.urls')),
+    path('main_page/', include('main_page.urls')),
+    path('', include('django.contrib.auth.urls')),
 ]
 
 if settings.DEBUG:
