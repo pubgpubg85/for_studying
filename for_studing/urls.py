@@ -9,7 +9,7 @@ urlpatterns = [
     path('proportion/', include('proportion.urls')),
     path('dbn/', include('dbn.urls')),
     path('main_page/', include('main_page.urls')),
-    path('', include('django.contrib.auth.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
 
 if settings.DEBUG:
