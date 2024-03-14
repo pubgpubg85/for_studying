@@ -35,6 +35,9 @@
 								<label for="remember_me">Remember Me!</label>
 							</div>
 							<div class="row">
+							<a name="reset_password" href="{% url 'main_page:reset_password' %}">Forget Password?</a>
+							</div>
+							<div class="row">
 								<input type="submit" value="Submit" class="btn">
 							</div>
 							{{ form.errors }}
