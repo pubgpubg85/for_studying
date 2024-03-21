@@ -137,3 +137,4 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'vojtkodmitro64@gmail.com'
 EMAIL_HOST_PASSWORD = 'terl xnle qpqr ljry'
+REMEMBER_ME_SESSION_EXPIRY = 60 * 60 * 24 * 30  # 30 days (in seconds)
