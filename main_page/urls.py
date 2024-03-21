@@ -10,21 +10,21 @@ urlpatterns = [
     path('registrate/', RegisterView.as_view(), name='registrate'),
 
     path('password_reset_done/',
-         auth_views.PasswordResetDoneView.as_view(template_name="pwd_reset/reset_password_sent.html"),
+         auth_views.PasswordResetDoneView.as_view(template_name="registration/reset_password_sent.html"),
          name="password_reset_done"),
 
     path('reset_password/',
          auth_views.PasswordResetView.as_view(
-             template_name="pwd_reset/reset_password.html",
-             success_url=reverse_lazy("main_page:password_reset_done")
+             template_name="registration/reset_password.html",
+             success_url=reverse_lazy("main_page:password_reset_done"),
          ),
          name="reset_password"),
 
     path('reset/<uidb64>/<token>/',
-         auth_views.PasswordResetConfirmView.as_view(template_name="pwd_reset/password_reset_form.html"),
+         auth_views.PasswordResetConfirmView.as_view(template_name="registration/password_reset_confirm.html",),
          name="password_reset_confirm"),
 
     path('reset/done/',
-         auth_views.PasswordResetCompleteView.as_view(template_name="pwd_reset/password_reset_done.html"),
+         auth_views.PasswordResetCompleteView.as_view(template_name="registration/password_reset_done.html"),
          name="password_reset_complete"),
 ]
